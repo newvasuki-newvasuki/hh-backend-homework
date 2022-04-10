@@ -5,13 +5,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import ru.hh.nab.hibernate.MappingConfig;
 import ru.hh.nab.starter.NabCommonConfig;
-import ru.hh.school.resource.ExampleResource;
+import ru.hh.school.resource.EmployerHttpResource;
+import ru.hh.school.resource.VacancyHttpResource;
+
 
 @Configuration
 @Import({
   // import your beans here
-  ExampleResource.class,
-  NabCommonConfig.class
+        EmployerHttpResource.class,
+        VacancyHttpResource.class,
+        NabCommonConfig.class
 })
 public class CommonConfig {
 
@@ -21,4 +24,5 @@ public class CommonConfig {
     mappingConfig.addPackagesToScan("ru.hh.school.entity");
     return mappingConfig;
   }
+
 }
